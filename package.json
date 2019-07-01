@@ -1,0 +1,28 @@
+{
+  "name": "basic-start-webapp",
+  "version": "1.0.0",
+  "description": "This is simple staring point for node webapp",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-to-https": "^1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vjandrei/basic-start-webapp.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Andreas Koutsoukos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vjandrei/basic-start-webapp/issues"
+  },
+  "homepage": "https://github.com/vjandrei/basic-start-webapp#readme"
+}
