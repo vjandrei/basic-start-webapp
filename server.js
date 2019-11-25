@@ -9,8 +9,9 @@ const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
  *
  * @return {ExpressServer} instance of the Express server.
  */
-function startServer() {
+const startServer = () => {
   const app = express();
+  const port = 8000;
 
   // Redirect HTTP to HTTPS,
   app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
@@ -20,9 +21,9 @@ function startServer() {
     const now = new Date();
     const time = `${now.toLocaleDateString()} - ${now.toLocaleTimeString()}`;
     const path = `"${req.method} ${req.path}"`;
-    const m = `${req.ip} - ${time} - ${path}`;
+    const logMessage = `${req.ip} - ${time} - ${path}`;
     // eslint-disable-next-line no-console
-    console.log(m);
+    console.log(logMessage);
     next();
   });
 
@@ -30,9 +31,9 @@ function startServer() {
   app.use(express.static('public'));
 
   // Start the server
-  return app.listen('8000', () => {
+  return app.listen(port, () => {
     // eslint-disable-next-line no-console
-    console.log('Local DevServer Started on port 8000...');
+    console.log(`Local DevServer Started on port ${port}!'`);
   });
 }
 
